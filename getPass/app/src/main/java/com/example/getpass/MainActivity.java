@@ -12,9 +12,11 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -46,10 +48,12 @@ public class MainActivity extends AppCompatActivity {
                 String user = String.valueOf(b.getText());
                 String pass = String.valueOf(c.getText());
 
+                CollectionReference websites = firestore.collection("Websites");
+
                 Map<String,Object> passWords = new HashMap<>();
-                passWords.put("SiteName: ", site);
-                passWords.put("Username: ", user);
-                passWords.put("Password: ", pass);
+                passWords.put("Username", user);
+                passWords.put("Password", pass);
+                websites.document(site).set(passWords);
 
                 firestore.collection("Websites").add(passWords).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
