@@ -55,9 +55,9 @@ public class MainActivity extends AppCompatActivity {
                 passWords.put("Password", pass);
                 websites.document(site).set(passWords);
 
-                firestore.collection("Websites").add(passWords).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                firestore.collection("Websites").document(site).set(passWords).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
-                    public void onSuccess(DocumentReference documentReference) {
+                    public void onSuccess(Void unused) {
                         Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG).show();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
@@ -66,6 +66,17 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Failure", Toast.LENGTH_LONG).show();
                     }
                 });
+//                firestore.collection("Websites").document(site).set(passWords).addOnSuccessListenerv(new OnSuccessListener<DocumentReference>() {
+//                    @Override
+//                    public void onSuccess(DocumentReference documentReference) {
+//                        Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG).show();
+//                    }
+//                }).addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//                        Toast.makeText(getApplicationContext(), "Failure", Toast.LENGTH_LONG).show();
+//                    }
+//                });
             }
         });
 
