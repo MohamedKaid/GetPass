@@ -77,7 +77,9 @@ public class checkList extends AppCompatActivity {
         myList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String st = myList.getAdapter().getItem(i).toString();
                 Intent intent = new Intent(checkList.this, infoActivity.class);
+                intent.putExtra("postion",st);
                 startActivity(intent);
             }
         });
