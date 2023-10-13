@@ -90,7 +90,16 @@ public class checkList extends AppCompatActivity {
 
 
 
-
+//        CollectionReference collRef = FirebaseFirestore.getInstance().collection("b  ");
+//
+//        collRef.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+//            @Override
+//            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+//                myArraylist.add(queryDocumentSnapshots.getDocuments().toString());
+//                myAdapter.notifyDataSetChanged();
+//                Toast.makeText(getApplicationContext(), "Succses",Toast.LENGTH_LONG).show();
+//            }
+//        });
 
 
 
@@ -110,37 +119,6 @@ public class checkList extends AppCompatActivity {
 //                    Toast.makeText(getApplicationContext(),"Success",Toast.LENGTH_LONG).show();
 //                }else
 //                    Toast.makeText(getApplicationContext(),"Failure",Toast.LENGTH_LONG).show();
-//            }
-//        });
-
-//        DocumentReference docRef = FirebaseFirestore.getInstance().collection("Websites").document("sgmnSwAzZfbClNa7JB80");
-
-
-//        CollectionReference collRef = FirebaseFirestore.getInstance().collection("b  ");
-
-//        collRef.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-//            @Override
-//            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-//                myArraylist.add(queryDocumentSnapshots.getDocuments().toString());
-//                myAdapter.notifyDataSetChanged();
-//                Toast.makeText(getApplicationContext(), "Succses",Toast.LENGTH_LONG).show();
-//            }
-//        });
-
-//        docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-//            @Override
-//            public void onSuccess(DocumentSnapshot documentSnapshot) {
-//                if(documentSnapshot.exists()){
-//                    myArraylist.add(documentSnapshot.getString("SiteName"));
-//                    myAdapter.notifyDataSetChanged();
-//                    Toast.makeText(getApplicationContext(), "Success",Toast.LENGTH_LONG).show();
-//                }else
-//                    Toast.makeText(getApplicationContext(),"Does not Exist",Toast.LENGTH_LONG).show();
-//            }
-//        }).addOnFailureListener(new OnFailureListener() {
-//            @Override
-//            public void onFailure(@NonNull Exception e) {
-//                Toast.makeText(getApplicationContext(),"Failure to get Collection", Toast.LENGTH_LONG).show();
 //            }
 //        });
 
