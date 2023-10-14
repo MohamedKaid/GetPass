@@ -45,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 String site = String.valueOf(a.getText());
+                String s1 = site.substring(0,1).toUpperCase();
+                site = s1 + site.substring(1);
                 String user = String.valueOf(b.getText());
                 String pass = String.valueOf(c.getText());
 
